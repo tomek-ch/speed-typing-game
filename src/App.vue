@@ -38,7 +38,6 @@ export default {
         const endTime = Date.now() / 1000;
         const wordCount = sentence.value.split(' ').length;
         wordsPerSec.value = ((wordCount / (endTime - startTime.value))).toFixed(2);
-        input.value = '';
       }
     });
 
@@ -46,6 +45,7 @@ export default {
       sentence.value = sentences[Math.floor(Math.random() * sentences.length)];
       startTime.value = Date.now() / 1000;
       state.value = 'inProgress';
+      input.value = '';
       nextTick(() => inputRef.value.focus());
     };
 
